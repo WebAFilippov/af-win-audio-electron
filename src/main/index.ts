@@ -31,7 +31,7 @@ async function createMainWindow(): Promise<BrowserWindow> {
     console.log('ELECTRON_RENDERER_URL', process.env['ELECTRON_RENDERER_URL']);
     mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL']);
   } else {
-    mainWindow.loadFile(join(__dirname, '../renderer/index.html'));
+    mainWindow.loadFile(join(__dirname, '../renderer/app/index.html'));
   }
 
   return mainWindow;

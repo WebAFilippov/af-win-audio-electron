@@ -23,7 +23,7 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin()],
   },
   renderer: {
-    assetsInclude: 'src/renderer/assets/**',
+    assetsInclude: 'src/renderer/shared/assets/**',
     resolve: {
       alias: {
         // ? renderer
@@ -36,5 +36,12 @@ export default defineConfig({
     define: {
       'process.env': process.env,
     },
+    build: {
+      rollupOptions: {
+        input: {
+          "main": resolve('src/renderer/app/index.html'),
+        }
+      }
+    }
   },
 });
